@@ -1,0 +1,68 @@
+/* color */
+
+$bgcolor: #f4fcff;
+
+$primary-text-color: #050505;
+$secondary-color: #ebebeb;
+$cta-text-color: #fc7038;
+$cta-color: #f39d56;
+
+%primary-font {
+	font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+}
+
+
+// button active state
+%button-style {
+	font-family: "Open Sans", "Helvetica", "Arial", sans-serif;
+	font-size: 18px;
+	line-height: 1;
+	text-align: center;
+	border-radius: 5px;
+	padding: 22px 30px;
+	display: inline-block;
+	cursor: pointer;
+	text-transform: uppercase;
+	text-decoration: none;
+	outline: none;
+	@include transition(all, 0.5s);
+	background: transparent;
+	color: $cta-text-color;
+	position: relative;
+}
+
+%active-state {
+	color: #fff;
+	background-image: linear-gradient(110deg, #eb6b79, #f39d56, #eb6b79);
+	background-size: 300% 100%;
+}
+
+/* font weight */
+$hariline: 100;
+$thin: 200;
+$light: 300;
+$normal: 400;
+$medium: 500;
+$semibold: 600;
+$bold: 700;
+$xbold: 800;
+$black-weight: 900;
+
+
+
+
+/* img path */
+$img-path: "../images";
+
+$img-banner-path: "../images/illustrations";
+
+$img-icons-path: "../images/icons";
+
+$img-svg-path: "../images/icons/svg";
+
+$img-logos-path: "../images/logos";
+
+
+/* break points*/
+$bp-tablet : 768px;
+$bp-lg-tablet: 900px;

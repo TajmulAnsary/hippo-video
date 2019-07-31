@@ -1,0 +1,12 @@
+@import "base/typography";
+@import "base/reset";
+@import "helpers/mixins";
+@import "helpers/variable";
+
+
+@import "default/layout";
+@import "default/common";
+@import "default/header";
+@import "default/footer";
+
+@import "pages/home";
