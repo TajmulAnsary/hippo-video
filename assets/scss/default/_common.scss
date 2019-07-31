@@ -82,7 +82,7 @@
 	color: $primary-text-color;
 
 	@include respond-to(tablet) {
-		font-size: 24px;
+		font-size: 22px;
 		margin-bottom: 15px;
 	}
 }
@@ -94,7 +94,7 @@
 	color: #050505;
 
 	@include respond-to(tablet) {
-		font-size: 20px;
+		font-size: 18px;
 		margin-bottom: 25px;
 	}
 }
