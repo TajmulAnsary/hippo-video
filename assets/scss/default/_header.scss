@@ -4,17 +4,16 @@ header {
 	top: 0;
 	left: 0;
 	right: 0;
-	height: 80px;
 	padding: 0 40px;
 	z-index: 100;
 	background: transparent;
-	@include flex;
-	@include align-center;
-	@include justify-space;
 	@include transition(all, 0.5s);
 
-	@include respond-to(tablet) {
-		padding: 0 20px;
+	section {
+		@include flex;
+		@include align-center;
+		@include justify-space;
+		height: 80px;
 	}
 
 	.logo {
@@ -29,7 +28,6 @@ header {
 		background-size: 150px 43px;
 		background-repeat: no-repeat;
 		position: relative;
-		top: -3px;
 	}
 
 	.popover {
@@ -75,7 +73,10 @@ header {
 		}
 
 		li {
-			margin: 0 0 8px 0;
+			+li {
+				margin: 8px 0 0;
+			}
+
 			line-height: 18px;
 
 			a {
@@ -88,13 +89,46 @@ header {
 				cursor: pointer;
 			}
 		}
+
+		@include respond-to(tablet) {
+			position: static;
+			display: none;
+			transform: scale(1);
+			opacity: 1;
+			visibility: visible;
+			box-shadow: none;
+			border: none;
+			width: auto;
+			height: auto;
+
+			&:before {
+				display: none;
+			}
+
+			li {
+				text-align: center;
+
+				a {
+					color: $cta-color;
+					display: inline-block
+				}
+			}
+		}
+	}
+
+	.main-nav {
+		>ul>li {
+			display: inline-block;
+
+			&.has-dropdown.active {
+				.drop-arrow {
+					transform: rotate(135deg)
+				}
+			}
+		}
 	}
 
 	ul {
-		@include flex;
-		@include flex-end;
-		@include align-baseline;
-
 		.has-dropdown {
 			position: relative;
 
@@ -118,8 +152,12 @@ header {
 		z-index: 1;
 		display: none;
 		vertical-align: middle;
-		padding: 10px;
+		padding: 8px;
+		cursor: pointer;
 
+		@include respond-to(tablet) {
+			display: inline-block;
+		}
 
 		.mob-menu {
 
@@ -128,11 +166,9 @@ header {
 				content: "";
 				position: absolute;
 				top: 0;
-				left: 50%;
 				background: #ffffff;
 				width: 21px;
 				height: 2px;
-				margin: 0 0 0 -10px;
 				border-radius: 2px;
 				-webkit-transform-origin: top left;
 				-ms-transform-origin: top left;
@@ -155,7 +191,6 @@ header {
 				background: #ffffff;
 				width: 21px;
 				height: 2px;
-				margin: 7px 0;
 				border-radius: 2px;
 				-webkit-transition: all 300ms;
 				transition: all 300ms;
@@ -198,6 +233,43 @@ header {
 			&::after,
 			span {
 				background: #111111;
+			}
+		}
+	}
+
+	@include respond-to(tablet) {
+		padding: 0 20px;
+
+		.main-nav {
+			display: none;
+		}
+
+		&.opened {
+			height: 100vh;
+
+			.top-nav+& {
+				height: calc(100vh - 36px);
+			}
+
+			.main-nav {
+				display: block;
+
+				>ul {
+					@include flex;
+					@include flex-column;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translateX(-50%) translateY(-50%);
+					width: 100%;
+					text-align: center;
+					max-height: 75%;
+					overflow: auto;
+
+					>li+li {
+						margin-top: 20px;
+					}
+				}
 			}
 		}
 	}

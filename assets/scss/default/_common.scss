@@ -30,7 +30,7 @@
 	margin-bottom: 40px;
 
 	@include respond-to(tablet) {
-		font-size: 30px;
+		font-size: 32px;
 		margin-bottom: 30px;
 	}
 }
@@ -39,12 +39,11 @@
 	font-size: 44px;
 	font-weight: normal;
 	line-height: 1.5;
-	text-align: left;
 	color: $primary-text-color;
 	margin-bottom: 55px;
 
 	@include respond-to(tablet) {
-		font-size: 24px;
+		font-size: 28px;
 		margin-bottom: 25px;
 	}
 }
@@ -116,7 +115,6 @@
 
 	@include respond-to(tablet) {
 		font-size: 14px;
-		line-height: 30px;
 	}
 
 	&:hover {
@@ -169,6 +167,12 @@
 	@include respond-to(tablet) {
 		font-size: 13px;
 		margin: 0 6px;
+
+		header & {
+			&:before {
+				display: none;
+			}
+		}
 	}
 
 	&:hover:before,
@@ -243,6 +247,7 @@ input {
 	-o-transform: rotate(-45deg);
 	transform: rotate(-45deg);
 	position: relative;
+	@include transition(all, 0.3s);
 }
 
 .margin-bottom-zero {

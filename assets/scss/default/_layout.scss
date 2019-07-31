@@ -1,6 +1,6 @@
 .container {
 	width: 95%; // not full width as specified in design
-	max-width: 1924px; // make sure the layout grid is not exceeding too large for 4k screens
+	max-width: 1800px; // make sure the layout grid is not exceeding too large for 4k screens
 	margin: 0 auto; // auto fill the rest 5% as margin
 	position: relative;
 	// padding: 0 20px; // make sure content is not touching the screen (not required since we adjusted width)

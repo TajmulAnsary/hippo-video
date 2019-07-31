@@ -33,6 +33,7 @@ $cta-color: #f39d56;
 
 %active-state {
 	color: #fff;
+	background-image: -o-linear-gradient(340deg, #fc6076, #ff9a44);
 	background-image: linear-gradient(110deg, #eb6b79, #f39d56, #eb6b79);
 	background-size: 300% 100%;
 }
@@ -65,4 +66,4 @@ $img-logos-path: "../images/logos";
 
 /* break points*/
 $bp-tablet : 768px;
-$bp-lg-tablet: 900px;
+$bp-lg-tablet: 992px;
